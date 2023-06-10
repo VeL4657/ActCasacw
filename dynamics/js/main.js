@@ -50,3 +50,8 @@ function validarContrasena() {
 
     return true;
 }
+
+function guardarCasa(seleccionCasa) {
+    localStorage.setItem('casaSeleccionada', seleccionCasa);
+    console.log('Casa seleccionada:', seleccionCasa);
+}
