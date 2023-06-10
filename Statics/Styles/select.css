@@ -1,15 +1,31 @@
 body
 {
-  background-color: #92C5FC;  
+  background-image: linear-gradient(0deg, #7F7FD5 0%, #86A8E7 50%, #91EAE4 100%);
 }
 
 #barrat
 {
+    background-image: linear-gradient( #7F7FD5 0%, #86A8E7 50%, #91b6ea 100%);
     display: flex;
     justify-content:center;
     align-items: center;
     font-size: xx-large;
     color: white;
-    background-color: #288BA8;
     height: 100px;
+    border-radius: 20px;
+}
+main
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-width: 100%;
+  min-height: 100%;
+  gap: 10px; 
+  justify-items: center; 
+  align-items: center;
+  padding-top: 12%; 
+  padding-bottom: 13%; 
+}
+img:hover {
+  transform: scale(1.05);
 }
