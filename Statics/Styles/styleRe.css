@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #7F7FD5;
@@ -13,7 +17,7 @@ body {
 .container {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 20px;
-    box-shadow: 20px 20px 15px 5px rgba(0,0,0,0.2);
+    box-shadow: 40px 40px 15px 5px rgba(0,0,0,0.2);
     padding: 60px;
     width: 400px;
     transition: transform 0.3s ease;
@@ -27,13 +31,6 @@ h2 {
     text-align: center;
     color: #333;
     margin-bottom: 30px;
-}
-
-label {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    display: block;
-    color: #333;
 }
 
 input[type=text], input[type=password] {
@@ -52,10 +49,11 @@ input[type=text]:focus, input[type=password]:focus {
     outline: none;
 }
 
-.verContra {
+input[type=button], input[type=submit] {
     display: block;
     width: 100%;
     padding: 10px 15px;
+    margin-bottom: 20px;
     border: none;
     border-radius: 50px;
     color: #fff;
@@ -64,19 +62,6 @@ input[type=text]:focus, input[type=password]:focus {
     transition: background-color 0.3s ease;
 }
 
-
-input[type=submit] {
-    display: block;
-    width: 100%;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 50px;
-    color: #fff;
-    background-color: #7F7FD5;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-input[type=submit]:hover {
+input[type=button]:hover, input[type=submit]:hover {
     background-color: #86A8E7;
 }

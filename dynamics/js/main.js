@@ -38,7 +38,7 @@ function validarContrasena() {
         if (!isNaN(contraRe[i])) {
             tieneNumero = true;
         }
-        if (/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(contraRe[i])) {
+        if (/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(contraRe[i])) {
             tieneCaracterEspecial = true;
         }
     }
