@@ -1,0 +1,82 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #7F7FD5;
+    background-image: linear-gradient(0deg, #7F7FD5 0%, #86A8E7 50%, #91EAE4 100%);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 20px 20px 15px 5px rgba(0,0,0,0.2);
+    padding: 60px;
+    width: 400px;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+input[type=text], input[type=password] {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #e0e0e0;
+    outline: none;
+}
+
+.verContra {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    background-color: #7F7FD5;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+input[type=submit] {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    background-color: #7F7FD5;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type=submit]:hover {
+    background-color: #86A8E7;
+}
