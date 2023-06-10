@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Registro</title>
-  <link rel="stylesheet" type="text/css" href="../Statics/Styles/styleRe.css">
-  <script src="../dynamics/js/main.js"></script>
-  <meta charset="UTF-8">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" type="text/css" href="../Statics/Styles/styleIn.css">
+    <script src="../dynamics/js/main.js"></script>
+    <meta charset="UTF-8">
 </head>
 <body>
 <div class="container">
-  <h2>Registro</h2>
-  <form method="POST" action="registro.php" onsubmit="return validarContrasena()">
-    <input type="text" id="nombreUsuario" name="nombreUsuario" placeholder="Ingresa tu usuario" required><br>
+    <h2>Inicio de Sesión</h2>
+    <form method="POST" action="iniciarSesion.php">
+        <input type="text" id="nombreUsuario" name="nombreUsuario" placeholder="Ingresa tu usuario" required><br>
 
-    <input type="password" id="contraRe" name="contraRe" placeholder="Ingresa tu contraseña" required><br>
+        <input type="password" id="contraIn" name="contraIn" placeholder="Ingresa tu contraseña" required><br>
 
-    <input type="password" id="confirmarContraRe" name="confirmarContraRe" placeholder="Confirma tu contraseña" required><br>
+        <input type="button" onclick="mostrarContraIn()" value="Ver Contraseña" class="btn"><br>
 
-    <input type="button" onclick="mostrarContraRe()" value="Ver Contraseña" class="btn"><br>
-
-    <input type="submit" value="Registrar" class="btn">
-  </form>
+        <input type="submit" value="Iniciar Sesión" class="btn">
+    </form>
+    <a href="registro.html" class="register-link"><button class="btn">Regístrate</button></a>
 </div>
 </body>
 </html>
