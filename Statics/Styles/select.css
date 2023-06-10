@@ -1,6 +1,5 @@
 body {
-    background-color: #22543d;
-    background-image: linear-gradient(#22543d 0%, #a3a948 50%, #f7e8a5 100%);
+    background-image: linear-gradient(#fff1c3 0%, #dbfeff 50%, #71b9da 100%);
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -12,7 +11,7 @@ body {
 
 #barrat {
     font-family: 'Roboto', sans-serif;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 30px;
     font-size: 2em;
     padding: 20px;
