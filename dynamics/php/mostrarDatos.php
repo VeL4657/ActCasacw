@@ -7,7 +7,7 @@ const PASS="danibutnotdani";
 const DB="baseCasas";
 
 const RUTA = "../../docs/sql/";
-const nRespaldo = "Twitter.sql";
+const nRespaldo = "baseCasas.sql";
 
 function connect(){
     $conexion = mysqli_connect(HOST,USER,PASS,DB);
@@ -30,22 +30,22 @@ function generarRespaldo(){
 }
 function mostrarDatos(){
     $conexion = connect();
-    $sql = "SELECT nombre, usuario, puntos_usuario, id_casa FROM usuarios";
+    $sql = "SELECT Nombre, Usuario, CasaID, Puntos FROM Usuarios";
     $result = mysqli_query($conexion, $sql);
 
     if (mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            echo "<td>" . $row["nombre"] . "</td>";
-            echo "<td>" . $row["usuario"] . "</td>";
-            echo "<td>" . $row["puntos_usuario"] . "</td>";
-            if ($row["id_casa"] == 1){
+            echo "<td>" . $row["Nombre"] . "</td>";
+            echo "<td>" . $row["Usuario"] . "</td>";
+            if ($row["CasaID"] == 1){
                 echo "<td>" . "Ajolotes" . "</td>";
-            } elseif ($row["id_casa"] == 2){
+            } elseif ($row["CasaID"] == 2){
                 echo "<td>" . "Halcones" . "</td>";
-            } elseif ($row["id_casa"] == 3){
+            } elseif ($row["CasaID"] == 3){
                 echo "<td>" . "Teporingos" . "</td>";
             }
+            echo "<td>" . $row["Puntos"] . "</td>";
             echo "</tr>";
         }
     } else {
@@ -69,6 +69,7 @@ function mostrarDatos(){
         <th>Nombre</th>
         <th>Puntos</th>
         <th>Casa</th>
+        <th>Puntos</th>
     </tr>
     <?php
     generarRespaldo();
