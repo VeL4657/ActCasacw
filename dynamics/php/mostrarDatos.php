@@ -67,7 +67,7 @@ function mostrarDatos(){
 <table>
     <tr>
         <th>Nombre</th>
-        <th>Puntos</th>
+        <th>Usuario</th>
         <th>Casa</th>
         <th>Puntos</th>
     </tr>
