@@ -1,7 +1,6 @@
 <?php
     session_start();
     $_SESSION["casa"] = $_COOKIE["casachida"];
-
     echo $_SESSION["casa"];
 ?>
 <!DOCTYPE html>
@@ -13,6 +12,6 @@
     <script src="../js/registro.js"></script>
 </head>
 <body>
-    
+    <h1>hola</h1>
 </body>
 </html>

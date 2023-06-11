@@ -5,16 +5,19 @@ window.addEventListener ("load",()=>{
 
     document.cookie = "casachida = null; max-age=3600";
 
-    btnaj.addEventListener("click", ()=>{
+    btnaj.addEventListener("click", (e)=>{
+        e.preventDefault();
         document.cookie = "casachida = 1; max-age=3600";
-        // alert(document.cookie);
+        window.location.href = "../php/registroDatos.php"
     });
-    btnha.addEventListener("click", ()=>{
+    btnha.addEventListener("click", (e)=>{
+        e.preventDefault();
         document.cookie = "casachida = 2; max-age=3600";
-        // alert(document.cookie);
+        window.location.href = "../php/registroDatos.php"
     });
-    btnte.addEventListener("click", ()=>{
+    btnte.addEventListener("click", (e)=>{
+        e.preventDefault();
         document.cookie = "casachida = 3; max-age=3600";
-        // alert(document.cookie);
+        window.location.href = "../php/registroDatos.php"
     });
 });
