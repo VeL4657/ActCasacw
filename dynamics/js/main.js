@@ -21,48 +21,40 @@ function mostrarContraIn() {
 
 var isUsernameValid = true;
 
-function usuarioE() {
+async function usuarioE() {
     var username = document.getElementById("nombreUsuarioRe").value;
     console.log ("Ayuda");
-    fetch("../dynamics/php/usuarioE.php?username=" + username, {
-        method: "GET"
-    })
-        .then(function (response) {
-            console.log(response);
-            if (response.status === 200) {
-                return response.text();
-            } else {
-                throw new Error("Error en la solicitud");
-            }
-        }).catch(function (error){
-            console.log(error);
-    })
-        .then(function (responseText) {
+    try {
+        const response = await fetch("../dynamics/php/validacionDatos.php?username=" + username, {
+            method: "GET"
+        });
+        console.log(response);
+        if (response.status === 200) {
+            const responseText = await response.text();
             console.log(responseText);
             if (responseText === "1") {
                 isUsernameValid = false;
             } else {
                 isUsernameValid = true;
             }
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+        } else {
+            throw new Error("Error en la solicitud");
+        }
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 
-function validarDatosRe() {
-    new Promise((resolve) => {
-        usuarioE();
-        setTimeout(() => {
-            resolve();
-        }, 1000)
-    }).then(() => {
-        if (!isUsernameValid) {
-            alert("Este nombre de usuario ya está en uso.");
-            return false;
-        }
-    })
+async function validarDatosRe(event) {
+    event.preventDefault();
+    
+    await usuarioE();
+
+    if (!isUsernameValid) {
+        alert("Este nombre de usuario ya está en uso.");
+        return false;
+    }
 
     var contraRe = document.getElementById("contraRe").value;
     var confirmarContraRe = document.getElementById("confirmarContraRe").value;
@@ -97,5 +89,4 @@ function validarDatosRe() {
     window.location.href="../dynamics/php/registroDatos.php"
     return true;
 }
-
 

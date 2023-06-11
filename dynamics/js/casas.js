@@ -8,16 +8,16 @@ window.addEventListener ("load",()=>{
     btnaj.addEventListener("click", (e)=>{
         e.preventDefault();
         document.cookie = "casachida = 1; max-age=3600";
-        window.location.href = "../php/registroDatos.php"
+        window.location.href = "../dynamics/php/registroDatos.php"
     });
     btnha.addEventListener("click", (e)=>{
         e.preventDefault();
         document.cookie = "casachida = 2; max-age=3600";
-        window.location.href = "../php/registroDatos.php"
+        window.location.href = "../dynamics/php/registroDatos.php"
     });
     btnte.addEventListener("click", (e)=>{
         e.preventDefault();
         document.cookie = "casachida = 3; max-age=3600";
-        window.location.href = "../php/registroDatos.php"
+        window.location.href = "../dynamics/php/registroDatos.php"
     });
 });

@@ -11,9 +11,9 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    echo '1'; // Si el nombre de usuario ya está en uso
+    echo '1';
 } else {
-    echo '0'; // Si el nombre de usuario no está en uso
+    echo '0';
 }
 mysqli_close($conexion);
 
