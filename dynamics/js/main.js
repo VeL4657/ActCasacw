@@ -27,6 +27,10 @@ function validarContrasena() {
         alert("La contraseña debe tener al menos 8 caracteres");
         return false;
     }
+    if (contraRe.length > 20) {
+        alert("La contraseña debe tener máximo 20 caracteres");
+        return false;
+    }
 
     if (contraRe !== confirmarContraRe) {
         alert("Las contraseñas no coinciden");

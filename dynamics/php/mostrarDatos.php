@@ -30,12 +30,13 @@ function generarRespaldo(){
 }
 function mostrarDatos(){
     $conexion = connect();
-    $sql = "SELECT usuario, puntos_usuario, id_casa FROM usuarios";
+    $sql = "SELECT nombre, usuario, puntos_usuario, id_casa FROM usuarios";
     $result = mysqli_query($conexion, $sql);
 
     if (mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
+            echo "<td>" . $row["nombre"] . "</td>";
             echo "<td>" . $row["usuario"] . "</td>";
             echo "<td>" . $row["puntos_usuario"] . "</td>";
             if ($row["id_casa"] == 1){
