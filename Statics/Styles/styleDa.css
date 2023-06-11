@@ -6,6 +6,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #7F7FD5;
     background-image: linear-gradient(#7F7FD5 0%, #86A8E7 50%, #5d817f 100%);
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
     height: 100vh;
