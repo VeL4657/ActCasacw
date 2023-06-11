@@ -15,6 +15,5 @@ if ($result->num_rows > 0) {
 } else {
     echo '0'; // Si el nombre de usuario no está en uso
 }
-
 mysqli_close($conexion);
 
