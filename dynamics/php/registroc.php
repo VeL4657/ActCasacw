@@ -1,5 +1,8 @@
 <?php
+    session_start();
+    $_SESSION["casa"] = $_COOKIE["casachida"];
 
+    echo $_SESSION["casa"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prueba</title>
-    <script src="../dynamics/js/registro.js"></script>
+    <script src="../js/registro.js"></script>
 </head>
 <body>
     
