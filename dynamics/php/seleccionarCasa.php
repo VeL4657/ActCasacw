@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Statics/Styles/select.css">
-    <script src="../dynamics/js/casas.js"></script>
+    <script src="../js/casas.js"></script>
     <title>Seleccionar Casa</title>
 </head>
 <body>
