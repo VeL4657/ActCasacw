@@ -2,10 +2,10 @@
     const HOST="localhost";
     const USER="danibutnotdani";
     const PASS="danibutnotdani";
-    const DB="Twitter";
+    const DB="baseCasas";
 
     const RUTA = "../../docs/sql/";
-    const nRespaldo = "Twitter.sql";
+    const nRespaldo = "baseCasas.sql";
 
 
     function connect(){
