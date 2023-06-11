@@ -9,14 +9,12 @@
 <body>
 <div class="container">
   <h2>Registro</h2>
-  <form method="POST" action="./seleccionarCasa.php" onsubmit="return validarContrasena()">
-    <input type="text" id="nombreRe" name="nombreRe" placeholder="Ingresa tu nombre" required><br>
+  <form method="POST" action="../dynamics/php/registroDatos.php" onsubmit="return validarDatosRe()">
+  <input type="text" id="nombreRe" name="nombreRe" placeholder="Ingresa tu nombre" required><br>
     <input type="text" id="nombreUsuarioRe" name="nombreUsuarioRe" placeholder="Ingresa tu usuario" required><br>
-
+    <span id="mensajeError" style="color: red; display: none;"></span>
     <input type="password" id="contraRe" name="contraRe" placeholder="Ingresa tu contraseña" required><br>
-
     <input type="password" id="confirmarContraRe" name="confirmarContraRe" placeholder="Confirma tu contraseña" required><br>
-
     <input type="button" onclick="mostrarContraRe()" value="Ver Contraseña" class="btn"><br>
 
     <input type="submit" value="Registrar" class="btn">

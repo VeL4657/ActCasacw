@@ -49,6 +49,14 @@ input[type=text]:focus, input[type=password]:focus {
     outline: none;
 }
 
+#mensajeError {
+    display: none;
+    color: red;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
 input[type=button], input[type=submit] {
     display: block;
     width: 100%;

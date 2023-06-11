@@ -15,17 +15,17 @@
 <header id="barrat">Selecciona tu casa</header>
 <main>
     <div class="btn" id="btnaj">
-        <a href="../dynamics/php/registroc.php">
+        <a href="../dynamics/php/registroDatos.php">
             <img src="../Statics/Assets/Media/botonajsf.png" alt="btn">
         </a>
     </div>
     <div class="btn" id="btnha">
-        <a href="../dynamics/php/registroc.php">
+        <a href="../dynamics/php/registroDatos.php">
             <img src="../Statics/Assets/Media/btnhasf.png" alt="btnha">
         </a>
     </div>
     <div class="btn" id="btnte">
-        <a href="../dynamics/php/registroc.php">
+        <a href="../dynamics/php/registroDatos.php">
             <img src="../Statics/Assets/Media/botontepsf.png" alt="btnha">
         </a>
     </div>  
