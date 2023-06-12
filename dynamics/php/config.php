@@ -26,5 +26,3 @@
             echo 'Ocurrió un error al crear el respaldo de la base de datos.';
         }
     }
-
-

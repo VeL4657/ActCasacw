@@ -9,16 +9,14 @@
 <body>
 <div class="container">
     <h2>Inicio de Sesión</h2>
-    <form id="formInicioSesion">
+    <form id="formInicioSesion" onsubmit="validarDatosIn(event)">
         <input type="text" id="nombreUsuarioIn" name="nombreUsuarioIn" placeholder="Ingresa tu usuario" required><br>
-
         <input type="password" id="contraIn" name="contraIn" placeholder="Ingresa tu contraseña" required><br>
-
         <input type="button" onclick="mostrarContraIn()" value="Ver Contraseña" class="btn"><br>
-
         <input type="submit" value="Iniciar Sesión" class="btn">
     </form>
     <a href="Templates/registro.html" class="register-link"><button class="btn">Regístrate</button></a>
 </div>
+<script src="dynamics/js/main.js"></script>
 </body>
 </html>

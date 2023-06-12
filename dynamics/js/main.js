@@ -21,48 +21,43 @@ function mostrarContraIn() {
 
 var isUsernameValid = true;
 
-function usuarioE() {
+async function usuarioE() {
     var username = document.getElementById("nombreUsuarioRe").value;
     console.log ("Ayuda");
-    fetch("../dynamics/php/usuarioE.php?username=" + username, {
-        method: "GET"
-    })
-        .then(function (response) {
-            console.log(response);
-            if (response.status === 200) {
-                return response.text();
-            } else {
-                throw new Error("Error en la solicitud");
-            }
-        }).catch(function (error){
-            console.log(error);
-    })
-        .then(function (responseText) {
+    try {
+        const response = await fetch("../dynamics/php/validarRe.php", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `username=${username}`
+        });
+        console.log(response);
+        if (response.status === 200) {
+            const responseText = await response.text();
             console.log(responseText);
             if (responseText === "1") {
                 isUsernameValid = false;
             } else {
                 isUsernameValid = true;
             }
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+        } else {
+            throw new Error("Error en la solicitud");
+        }
+    } catch (error) {
+        console.log(error);
+    }
 }
 
+async function validarDatosRe(event) {
+    event.preventDefault();
 
-function validarDatosRe() {
-    new Promise((resolve) => {
-        usuarioE();
-        setTimeout(() => {
-            resolve();
-        }, 1000)
-    }).then(() => {
-        if (!isUsernameValid) {
-            alert("Este nombre de usuario ya está en uso.");
-            return false;
-        }
-    })
+    await usuarioE();
+
+    if (!isUsernameValid) {
+        alert("Este nombre de usuario ya está en uso.");
+        return false;
+    }
 
     var contraRe = document.getElementById("contraRe").value;
     var confirmarContraRe = document.getElementById("confirmarContraRe").value;
@@ -94,8 +89,54 @@ function validarDatosRe() {
         alert("La contraseña debe tener al menos un número y un carácter especial");
         return false;
     }
-    window.location.href="../dynamics/php/registroDatos.php"
-    return true;
+    try {
+        const response = await fetch("../dynamics/php/registroDatos.php", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `nombreRe=${nombreRe}&nombreUsuarioRe=${nombreUsuarioRe}&contraRe=${contraRe}&confirmarContraRe=${confirmarContraRe}`
+        });
+
+        if (response.status === 200) {
+            const responseText = await response.text();
+            // Aquí puedes manejar la respuesta del servidor, por ejemplo, redirigir a otra página si el registro fue exitoso
+        } else {
+            throw new Error("Error en la solicitud");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function validarDatosIn(event) {
+    event.preventDefault();
+
+    var username = document.getElementById("nombreUsuarioIn").value;
+    var password = document.getElementById("contraIn").value;
+
+    try {
+        const response = await fetch("../dynamics/php/validarInicioSesion.php", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `username=${username}&password=${password}`
+        });
+
+        if (response.status === 200) {
+            const responseText = await response.text();
+            if (responseText === "1") {
+                window.location.href = "paginaInicio.html"; // O la página a la que quieras redirigir después del inicio de sesión exitoso
+            } else {
+                alert("Nombre de usuario o contraseña incorrectos.");
+            }
+        } else {
+            throw new Error("Error en la solicitud");
+        }
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 
