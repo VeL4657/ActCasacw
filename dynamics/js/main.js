@@ -1,7 +1,7 @@
 //Se encarga de mostrar la contraseña en el registro (funciona)
 function mostrarContraRe() {
-    var contraRe = document.getElementById("contraRe").value;
-    var confirmarContraRe = document.getElementById("confirmarContraRe").value;
+    var contraRe = document.getElementById("contraRe");
+    var confirmarContraRe = document.getElementById("confirmarContraRe");
     if (contraRe.type === "password" || confirmarContraRe.type === "password") {
         contraRe.type = "text";
         confirmarContraRe.type = "text";
@@ -13,7 +13,7 @@ function mostrarContraRe() {
 
 //Se encarga de mostrar la contraseña en el inicio de sesión (funciona)
 function mostrarContraIn() {
-    var contraIn = document.getElementById("contraIn").value;
+    var contraIn = document.getElementById("contraIn");
     if (contraIn.type === "password") {
         contraIn.type = "text";
     } else {
@@ -55,7 +55,7 @@ async function usuarioE() {
 //Valida datos de registro (funciona)
 async function validarDatosRe(event) {
     event.preventDefault();
-
+    
     await usuarioE();
 
     if (!isUsernameValid) {
@@ -63,6 +63,8 @@ async function validarDatosRe(event) {
         return false;
     }
 
+    var nombreRe = document.getElementById("nombreRe").value;
+    var nombreUsuarioRe = document.getElementById("nombreUsuarioRe").value;
     var contraRe = document.getElementById("contraRe").value;
     var confirmarContraRe = document.getElementById("confirmarContraRe").value;
 
@@ -93,6 +95,7 @@ async function validarDatosRe(event) {
         alert("La contraseña debe tener al menos un número y un carácter especial");
         return false;
     }
+
     try {
         const response = await fetch("../dynamics/php/registroDatos.php", {
             method: "POST",
@@ -135,7 +138,7 @@ async function validarDatosIn(event) {
             if (responseText === "1") {
                 // O la página a la que quieras redirigir después del inicio de sesión exitoso
                 window.location.href = "../php/main.php";
-                console.log("aaaaaaaaaaaa");
+                alert("datos validados");
             } else {
                 alert("Nombre de usuario o contraseña incorrectos.");
             }

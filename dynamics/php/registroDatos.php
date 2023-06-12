@@ -20,26 +20,25 @@ function generarHash($contra,$sal){
         $pimientaCHAR1 = $carac[$carac_p[0]];
         $pimientaCHAR2 = $carac[$carac_p[1]];
         $pimienta = $pimientaCHAR1.$pimientaCHAR2;
-    // Aqui hash solamente de contraseña
-        $contraHasheada = hash("SHA256", $contra);
+    // unimos todo
+        $contraseña = $contra.$pimienta.$sal;     
     //hash completo
-        $hash = $contraHasheada.$pimienta.$sal;
+    $hash = hash("SHA256", $contraseña);
     return $hash;
 }
 
 //Sanitización de datos(funciona)
-$nombreRe = isset($_POST["nombreRe"]) ? sanitas($_POST["nombreRe"]) : "";
-$nombreUsuarioRe = isset($_POST["nombreUsuarioRe"]) ? sanitas($_POST["nombreUsuarioRe"]) : "";
-$contraRe = isset($_POST["contraRe"]) ? trim(stripslashes($_POST["contraRe"])) : "";
-$confirmarContraRe = isset($_POST["confirmarContraRe"]) ? trim(stripslashes($_POST["confirmarContraRe"])) : "";
-$nombreUsuarioIn = isset($_POST["nombreUsuarioIn"]) ? sanitas($_POST["nombreUsuarioIn"]) : "";
-$contraIn = isset($_POST["contraIn"]) ? trim(stripslashes($_POST["contraIn"])) : "";
+$nombreRe          = isset($_POST["nombreRe"])          ? sanitas (             $_POST["nombreRe"])           : "";
+$nombreUsuarioRe   = isset($_POST["nombreUsuarioRe"])   ? sanitas (             $_POST["nombreUsuarioRe"])    : "";
+$contraRe          = isset($_POST["contraRe"])          ? trim    (stripslashes($_POST["contraRe"]))          : "";
+$confirmarContraRe = isset($_POST["confirmarContraRe"]) ? trim    (stripslashes($_POST["confirmarContraRe"])) : "";
+$nombreUsuarioIn   = isset($_POST["nombreUsuarioIn"])   ? sanitas (             $_POST["nombreUsuarioIn"])    : "";
+$contraIn          = isset($_POST["contraIn"])          ? trim    (stripslashes($_POST["contraIn"]))          : "";
 
 $nombreRe          = mysqli_real_escape_string($conexion, $nombreRe);
 $nombreUsuarioRe   = mysqli_real_escape_string($conexion, $nombreUsuarioRe);
 $contraRe          = mysqli_real_escape_string($conexion, $contraRe);
 $confirmarContraRe = mysqli_real_escape_string($conexion, $confirmarContraRe);
-
 
 
 /*
@@ -59,6 +58,9 @@ if ($contraRe === $confirmarContraRe) {
 
     $sql = "INSERT INTO Usuarios (Nombre, Usuario, ContraID) VALUES ('$nombreRe', '$nombreUsuarioRe', $contraId)";
     mysqli_query($conexion, $sql);
+
+    session_start();
+    $_SESSION["UsuarioID"] = mysqli_insert_id($conexion);
 }
 
 mysqli_close($conexion);

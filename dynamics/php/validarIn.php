@@ -10,11 +10,18 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 //Busca los datos (Verificar si funciona)
-$sql = "SELECT ContraHashh FROM Usuarios INNER JOIN ContraPass ON Usuarios.ContraID = ContraPass.ContraID WHERE Usuario = ?";
+// $sql prepara consulta para ejecución 
+$sql = "SELECT ContraHashh FROM Contrapass INNER JOIN ContraPass ON Usuarios.ContraID = ContraPass.ContraID WHERE Usuario = ?";
+// stmt prepara al sql para recibir un dato, al final
 $stmt = $conexion->prepare($sql);
-$stmt->bind_param('s', $username);
+// no sé que demonios hace
+$stmt->bind_param('s', $password);
+// ejecuta, creo
 $stmt->execute();
+// obtiene el resultado
 $result = $stmt->get_result();
+
+
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
@@ -30,8 +37,6 @@ if ($result->num_rows > 0) {
 } else {
     echo '0';
 }
-
-mysqli_close($conexion);
 
 
 /*Para usar cuando configuren hash, antes no porque da error
@@ -50,7 +55,7 @@ mysqli_close($conexion);
 //     echo '0';
 // }
 
-function hashearContra(){
+function hashearContra($contraseña){
     $contraHasheada = hash("SHA256", $contra);
     return  $contraHasheada;
 }
@@ -74,3 +79,5 @@ function verificar_contra ($password, $hashDB, $sal){
     }
     return $verificacion;
 }
+
+mysqli_close($conexion);

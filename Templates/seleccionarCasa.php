@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    $_SESSION["Registro"]=1;
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
