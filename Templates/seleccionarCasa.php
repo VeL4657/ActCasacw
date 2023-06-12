@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Statics/Styles/select.css">
-    <script src="../dynamics/js/casas.js"></script>
     <title>Seleccionar Casa</title>
 </head>
 <body>
 <header id="barrat">Selecciona tu casa</header>
 <main>
-    <form action="../dynamics/php/obtaincasa.php" method="POST" target="_self">
+    <form action="../dynamics/php/paginaaaaa.php" method="POST" target="_self">
 
         <button type="submit" value="1" class="btn" name="btn">
             <img src="../Statics/Assets/Media/botonajsf.png" alt="btn">

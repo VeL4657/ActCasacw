@@ -105,6 +105,7 @@ async function validarDatosRe(event) {
         if (response.status === 200) {
             const responseText = await response.text();
             // Aquí puedes manejar la respuesta del servidor, por ejemplo, redirigir a otra página si el registro fue exitoso
+            window.location.href = "./seleccionarCasa.php";
         } else {
             throw new Error("Error en la solicitud");
         }
