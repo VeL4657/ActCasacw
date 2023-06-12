@@ -14,11 +14,11 @@
     font-family:"Signika";
     src: url('../Assets/Media/Signika/Signika-VariableFont_wght.ttf');
 }*/
-
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #7F7FD5;
-    background-image: linear-gradient(0deg, #7F7FD5 0%, #86A8E7 50%, #91EAE4 100%);
+    background-color: #1F2041;
+    background-image: linear-gradient(0deg, #1F2041 0%, #4B3F72 50%, #FFC857 100%);
+>>>>>>> 3a87b97 (CSS de Dani)
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -34,7 +34,8 @@ body {
     margin-bottom: 30px;
 }
 
-.tuspuntos, .tucasa, .puntaje {
+.tuspuntos, .casa, .puntaje {
+>>>>>>> 3a87b97 (CSS de Dani)
     text-align: center;
     color: #fff;
     margin-bottom: 20px;
@@ -45,13 +46,17 @@ body {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     box-shadow: 20px 20px 15px 5px rgba(0,0,0,0.2);
-    padding: 60px;
-    width: 400px;
+    padding: 20px;
+    width: 300px;
+>>>>>>> 3a87b97 (CSS de Dani)
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
     transition: transform 0.3s ease;
+}
+.cuadrito:hover {
+    transform: scale(1.05);
 }
 
 .sumar, .restar {
@@ -62,14 +67,15 @@ body {
     margin-left: 10px;
     border-radius: 50px;
     border: none;
-    background-color: #7F7FD5;
+    background-color: #119DA4;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .sumar:hover, .restar:hover {
-    background-color: #86A8E7;
+    background-color: #FFC857;
+>>>>>>> 3a87b97 (CSS de Dani)
 }
 
 #cantidad {
@@ -78,6 +84,7 @@ body {
     text-align: center;
     border-radius: 50px;
     border: none;
+<<<<<<< HEAD
     background-color: #f0f0f0;
     transition: background-color 0.3s ease;
 }
@@ -102,3 +109,31 @@ body {
 .enviar:hover {
     background-color: #86A8E7;
 }
+=======
+    background-color: #e0e0f0;
+    transition: background-color 0.3s ease;
+}
+
+#cantidad:focus {
+    background-color: #d0d0e0;
+    outline: none;
+}
+
+.enviar {
+    width: 100px;
+    height: 50px;
+    margin-left: 10px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: none;
+    background-color: #119DA4;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.enviar:hover {
+    background-color: #FFC857;
+}
+
+>>>>>>> 3a87b97 (CSS de Dani)

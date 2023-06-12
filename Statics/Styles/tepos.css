@@ -14,52 +14,95 @@
     font-family:"Signika";
     src: url('../Assets/Media/Signika/Signika-VariableFont_wght.ttf');
 }
-body{
-    background-image: linear-gradient(#201818 0%, #5d00f3 50%, #71b9da 100%);
-    min-height: 700px ; 
-}
-.tuspuntos{
-    font-family:"Signika";
-    text-align: center;
-    color:rgb(143, 255, 255);
-}
-.casa{
-    font-family:"Signika";
-	text-align: justify; 
-    text-align: center;
-    color:rgb(143, 255, 255);
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F7F7F7;
+    background-image: linear-gradient(45deg, #F3E6E3 0%, #F7F7F7 50%, #AEDFF7 100%);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.sumar{
-    background-color: rgb(232, 159, 159);
+#titulo {
+    color: #5D6D7E;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
-.cuadrito{
+
+.tuspuntos, .casa, .puntaje {
     text-align: center;
+    color: #5D6D7E;
+    margin-bottom: 20px;
+    font-size: 18px;
 }
 
-.restar{
-    background-color: rgba(72, 72, 234, 0.74);
+.cuadrito {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 20px 20px 15px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
 }
 
-.enviar{
-    background-color: rgb(150, 224, 150);
+.cuadrito:hover {
+    transform: scale(1.05);
 }
 
-#titulo{
-    color:rgb(18, 18, 18);
-	font-family:"AmaticSC-Regular";
-	text-align: justify;
+.sumar, .restar {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 50px;
+    border: none;
+    background-color: #AED6F1;
+    color: #5D6D7E;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sumar:hover, .restar:hover {
+    background-color: #85C1E9;
+}
+
+#cantidad {
+    width: 50px;
+    height: 50px;
     text-align: center;
-    background-color: rgb(93, 0, 214);
-	height: 20% ; 
-	font-size: 3rem;
-    border-radius: 100px;
+    border-radius: 50px;
+    border: none;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
 }
 
-.puntaje{
-    font-family:"Great vibes";
-    text-align: center;
-    background-color: rgba(132, 190, 218, 0.765);
-    font-size: 1.8rem
-    
+#cantidad:focus {
+    background-color: #e0e0f0;
+    outline: none;
+}
+
+.enviar {
+    width: 100px;
+    height: 50px;
+    margin-left: 10px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: none;
+    background-color: #AED6F1;
+    color: #5D6D7E;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.enviar:hover {
+    background-color: #85C1E9;
 }
