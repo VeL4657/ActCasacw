@@ -1,4 +1,4 @@
-@font-face{
+/*@font-face{
     font-family:"Caveat";
     src: url('../Assets/Media/Caveat/Caveat-VariableFont_wght.ttf');
 }
@@ -13,53 +13,92 @@
 @font-face{
     font-family:"Signika";
     src: url('../Assets/Media/Signika/Signika-VariableFont_wght.ttf');
-}
-body{
-    background-image: linear-gradient(#201818 0%, #f31c00 50%, #b8be00 100%);
-    min-height: 700px ; 
-}
-.tuspuntos{
-    font-family:"Signika";
-    text-align: center;
-    color:rgb(91, 201, 201);
-}
-.casa{
-    font-family:"Signika";
-	text-align: justify; 
-    text-align: center;
-    color:rgb(91, 201, 201) ;
+}*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #7F7FD5;
+    background-image: linear-gradient(0deg, #7F7FD5 0%, #86A8E7 50%, #91EAE4 100%);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.sumar{
-    background-color: rgb(232, 159, 159);
+#titulo {
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
-.cuadrito{
+
+.tuspuntos, .tucasa, .puntaje {
     text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 18px;
 }
 
-.restar{
-    background-color: rgba(12, 12, 231, 0.74);
+.cuadrito {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 20px 20px 15px 5px rgba(0,0,0,0.2);
+    padding: 60px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
 }
 
-.enviar{
-    background-color: rgb(150, 224, 150);
+.sumar, .restar {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 50px;
+    border: none;
+    background-color: #7F7FD5;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#titulo{
-    color:rgb(18, 18, 18);
-	font-family:"AmaticSC-Regular";
-	text-align: justify;
+.sumar:hover, .restar:hover {
+    background-color: #86A8E7;
+}
+
+#cantidad {
+    width: 50px;
+    height: 50px;
     text-align: center;
-    background-color: rgb(224, 31, 24);
-	height: 20% ; 
-	font-size: 3rem;
-    border-radius: 100px;
+    border-radius: 50px;
+    border: none;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
 }
 
-.puntaje{
-    font-family:"Great vibes";
-    text-align: center;
-    background-color: rgba(132, 190, 218, 0.765);
-    font-size: 1.8rem
-    
+#cantidad:focus {
+    background-color: #e0e0e0;
+    outline: none;
+}
+
+.enviar {
+    width: 100px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 50px;
+    font-size: 16px;
+    border: none;
+    background-color: #7F7FD5;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.enviar:hover {
+    background-color: #86A8E7;
 }
