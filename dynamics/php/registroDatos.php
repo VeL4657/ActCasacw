@@ -35,9 +35,9 @@ $confirmarContraRe = isset($_POST["confirmarContraRe"]) ? trim(stripslashes($_PO
 $nombreUsuarioIn = isset($_POST["nombreUsuarioIn"]) ? sanitas($_POST["nombreUsuarioIn"]) : "";
 $contraIn = isset($_POST["contraIn"]) ? trim(stripslashes($_POST["contraIn"])) : "";
 
-$nombreRe = mysqli_real_escape_string($conexion, $nombreRe);
-$nombreUsuarioRe = mysqli_real_escape_string($conexion, $nombreUsuarioRe);
-$contraRe = mysqli_real_escape_string($conexion, $contraRe);
+$nombreRe          = mysqli_real_escape_string($conexion, $nombreRe);
+$nombreUsuarioRe   = mysqli_real_escape_string($conexion, $nombreUsuarioRe);
+$contraRe          = mysqli_real_escape_string($conexion, $contraRe);
 $confirmarContraRe = mysqli_real_escape_string($conexion, $confirmarContraRe);
 
 //Guardar contraseña (sólo de prueba), reemplazar con HASH(funciona)
