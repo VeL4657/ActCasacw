@@ -39,6 +39,7 @@
     </div>
     <p class= "casa">Perteneces a la casa: casa </p>
     <p class="puntaje" >Tu casa tiene un total de : numero puntos </p>
+    
     <?php
 			$dato =$_POST;
 	?>

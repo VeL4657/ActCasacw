@@ -10,10 +10,12 @@ function sanitas($data){
 
 function generarSal(){
     //Aqui va la logica de sal
+    
 }
 
 function generarHash($contra, $sal){
     // Aqui hash
+
 }
 //Sanitización de datos(funciona)
 $nombreRe = isset($_POST["nombreRe"]) ? sanitas($_POST["nombreRe"]) : "";

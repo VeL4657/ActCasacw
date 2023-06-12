@@ -21,13 +21,13 @@ body{
 .tuspuntos{
     font-family:"Signika";
     text-align: center;
-    color:rgb(91, 201, 201);
+    color:rgb(0, 25, 95);
 }
 .casa{
     font-family:"Signika";
 	text-align: justify; 
     text-align: center;
-    color:rgb(91, 201, 201) ;
+    color:rgb(0, 25, 95) ;
 }
 
 .sumar{
@@ -59,7 +59,7 @@ body{
 .puntaje{
     font-family:"Great vibes";
     text-align: center;
-    background-color: rgba(132, 190, 218, 0.765);
+    background-color: rgba(0, 145, 218, 0.765);
     font-size: 1.8rem
     
 }
