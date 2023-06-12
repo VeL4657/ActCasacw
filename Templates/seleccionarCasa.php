@@ -9,15 +9,15 @@
 <body>
 <header id="barrat">Selecciona tu casa</header>
 <main>
-    <form action="../dynamics/php/paginaaaaa.php" method="POST" target="_self">
+    <form action="../dynamics/php/main.php" method="POST" target="_self">
 
-        <button type="submit" value="1" class="btn" name="btn">
+        <button type="submit" value="ajolotes" class="btn" name="btn">
             <img src="../Statics/Assets/Media/botonajsf.png" alt="btn">
         </button>
-        <button type="submit" value="2" class="btn" name="btn">
+        <button type="submit" value="halcones" class="btn" name="btn">
             <img src="../Statics/Assets/Media/btnhasf.png" alt="btnha">
         </button>
-        <button type="submit" value="3" class="btn" name="btn">
+        <button type="submit" value="teporingos" class="btn" name="btn">
             <img src="../Statics/Assets/Media/botontepsf.png" alt="btnha">
         </button>
     </form>

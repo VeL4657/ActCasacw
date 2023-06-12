@@ -133,7 +133,9 @@ async function validarDatosIn(event) {
         if (response.status === 200) {
             const responseText = await response.text();
             if (responseText === "1") {
-                window.location.href = "paginaInicio.html"; // O la página a la que quieras redirigir después del inicio de sesión exitoso
+                // O la página a la que quieras redirigir después del inicio de sesión exitoso
+                window.location.href = "../php/main.php";
+                console.log("aaaaaaaaaaaa");
             } else {
                 alert("Nombre de usuario o contraseña incorrectos.");
             }

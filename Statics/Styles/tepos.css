@@ -15,7 +15,7 @@
     src: url('../Assets/Media/Signika/Signika-VariableFont_wght.ttf');
 }
 body{
-    background-image: linear-gradient(#fff1c3 0%, #dbfeff 50%, #71b9da 100%);
+    background-image: linear-gradient(#201818 0%, #5d00f3 50%, #71b9da 100%);
     min-height: 700px ; 
 }
 .tuspuntos{
@@ -45,15 +45,15 @@ body{
     background-color: rgb(150, 224, 150);
 }
 
-h1{
+#titulo{
     color:rgb(18, 18, 18);
 	font-family:"AmaticSC-Regular";
 	text-align: justify;
     text-align: center;
-    background-color: rgb(54, 165, 221);
+    background-color: rgb(93, 0, 214);
 	height: 20% ; 
-	font-size: 4.5rem
-
+	font-size: 3rem;
+    border-radius: 100px;
 }
 
 .puntaje{
@@ -63,7 +63,3 @@ h1{
     font-size: 1.8rem
     
 }
-
-
-
-
