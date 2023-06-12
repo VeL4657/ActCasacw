@@ -1,3 +1,27 @@
+<?php
+function mostrarDatos()
+{
+require_once "./config.php";
+connect();
+
+$conexion = connect();
+$sql = "SELECT Nombre, Usuario, CasaID, Puntos FROM Usuarios";
+$result = mysqli_query($conexion, $sql);
+$datos = array();
+
+if (mysqli_num_rows($result) > 0) {
+while($row = mysqli_fetch_assoc($result)) {
+$datos[] = $row;
+}
+} else {
+echo "0 resultados";
+}
+mysqli_close($conexion);
+
+return $datos;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +39,6 @@
         <th>Puntos</th>
     </tr>
     <?php
-    require_once './registroDatos.php';
     $usuarios = mostrarDatos();
     foreach($usuarios as $usuario) {
         echo "<tr>";

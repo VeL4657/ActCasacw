@@ -25,8 +25,12 @@ async function usuarioE() {
     var username = document.getElementById("nombreUsuarioRe").value;
     console.log ("Ayuda");
     try {
-        const response = await fetch("../dynamics/php/validacionDatos.php?username=" + username, {
-            method: "GET"
+        const response = await fetch("../dynamics/php/validarRe.php", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `username=${username}`
         });
         console.log(response);
         if (response.status === 200) {
@@ -45,10 +49,9 @@ async function usuarioE() {
     }
 }
 
-
 async function validarDatosRe(event) {
     event.preventDefault();
-    
+
     await usuarioE();
 
     if (!isUsernameValid) {
@@ -86,7 +89,54 @@ async function validarDatosRe(event) {
         alert("La contraseña debe tener al menos un número y un carácter especial");
         return false;
     }
-    window.location.href="../dynamics/php/registroDatos.php"
-    return true;
+    try {
+        const response = await fetch("../dynamics/php/registroDatos.php", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `nombreRe=${nombreRe}&nombreUsuarioRe=${nombreUsuarioRe}&contraRe=${contraRe}&confirmarContraRe=${confirmarContraRe}`
+        });
+
+        if (response.status === 200) {
+            const responseText = await response.text();
+            // Aquí puedes manejar la respuesta del servidor, por ejemplo, redirigir a otra página si el registro fue exitoso
+        } else {
+            throw new Error("Error en la solicitud");
+        }
+    } catch (error) {
+        console.log(error);
+    }
 }
+
+async function validarDatosIn(event) {
+    event.preventDefault();
+
+    var username = document.getElementById("nombreUsuarioIn").value;
+    var password = document.getElementById("contraIn").value;
+
+    try {
+        const response = await fetch("../dynamics/php/validarInicioSesion.php", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `username=${username}&password=${password}`
+        });
+
+        if (response.status === 200) {
+            const responseText = await response.text();
+            if (responseText === "1") {
+                window.location.href = "paginaInicio.html"; // O la página a la que quieras redirigir después del inicio de sesión exitoso
+            } else {
+                alert("Nombre de usuario o contraseña incorrectos.");
+            }
+        } else {
+            throw new Error("Error en la solicitud");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 
