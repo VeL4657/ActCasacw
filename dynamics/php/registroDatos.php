@@ -9,14 +9,24 @@ function sanitas($data){
 }
 
 function generarSal(){
-    //Aqui va la logica de sal
-    
+    //GENERAMOS: sal
+    $sal = uniqid();
+    return $sal;
+}
+function generarHash($contra,$sal){
+    //GENERAMOS: pimienta
+        $carac = str_split("ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz");
+        $carac_p = array_rand ($carac, 2);
+        $pimientaCHAR1 = $carac[$carac_p[0]];
+        $pimientaCHAR2 = $carac[$carac_p[1]];
+        $pimienta = $pimientaCHAR1.$pimientaCHAR2;
+    // Aqui hash solamente de contraseña
+        $contraHasheada = hash("SHA256", $contra);
+    //hash completo
+        $hash = $contraHasheada.$pimienta.$sal;
+    return $hash;
 }
 
-function generarHash($contra, $sal){
-    // Aqui hash
-
-}
 //Sanitización de datos(funciona)
 $nombreRe = isset($_POST["nombreRe"]) ? sanitas($_POST["nombreRe"]) : "";
 $nombreUsuarioRe = isset($_POST["nombreUsuarioRe"]) ? sanitas($_POST["nombreUsuarioRe"]) : "";
@@ -42,7 +52,9 @@ mysqli_close($conexion);
  * Hasheo contraseñas, tambien tienen que agregar la verificacion de hash en validarIn.php.
  * Este trozo de código guarda la contraseña correctamente en ContraPass y recupera su ID para guardarlo en Usuarios.
  * (funciona)
- * if ($contraRe === $confirmarContraRe) {
+ */
+if ($contraRe === $confirmarContraRe) {
+    
     $sal = generarSal();
     $hash = generarHash($contraRe, $sal);
 
@@ -54,4 +66,4 @@ mysqli_close($conexion);
     $sql = "INSERT INTO Usuarios (Nombre, Usuario, ContraID) VALUES ('$nombreRe', '$nombreUsuarioRe', $contraId)";
     mysqli_query($conexion, $sql);
 }
- */
+

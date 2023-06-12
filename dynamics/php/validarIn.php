@@ -21,7 +21,8 @@ if ($result->num_rows > 0) {
     $storedPassword = $row['ContraHashh'];
 
     if ($password === $storedPassword) {
-        $_SESSION['username'] = $username; // Guarda el username en la sesión y genera una sesión que usar en página principal
+        // Guarda el username en la sesión y genera una sesión que usar en página principal
+        $_SESSION['username'] = $username;
         echo '1';
     } else {
         echo '0';
@@ -34,16 +35,42 @@ mysqli_close($conexion);
 
 
 /*Para usar cuando configuren hash, antes no porque da error
-(funciona)
- * if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $hashPassword = $row['ContraHashh'];
+(funciona)*/
 
-    if (password_verify($password, $hashPassword)) {
-        echo '1';
-    } else {
-        echo '0';
+// if ($result->num_rows > 0) {
+//     $row = $result->fetch_assoc();
+//     $hashPassword = $row['ContraHashh'];
+
+//     if (password_verify($password, $hashPassword)) {
+//         echo '1';
+//     } else {
+//         echo '0';
+//     }
+// } else {
+//     echo '0';
+// }
+
+function hashearContra(){
+    $contraHasheada = hash("SHA256", $contra);
+    return  $contraHasheada;
+}
+
+function verificar_contra ($password, $hashDB, $sal){
+    $verificacion = false;
+    
+    $caracteres = str_split("ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz");
+    
+    for ($i=0; $i < count($caracteres); $i++) { 
+        for ($j=0; $j < count($caracteres); $j++) { 
+            $pimienta = $caracteres[$i].$caracteres[$j];
+
+            $contraseña = $password.$pimienta.$sal;
+
+            if(hashearContra ($contraseña) == $hashDB){
+                $verificacion = true;
+                break 3;
+            }
+        }
     }
-} else {
-    echo '0';
-}*/
+    return $verificacion;
+}
