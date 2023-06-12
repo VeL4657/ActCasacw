@@ -18,6 +18,30 @@
             }
         }
     }
+
+    function generarSal(){
+        //GENERAMOS: sal
+        $sal = uniqid();
+        return $sal;
+    }
+    function generarHash($contra,$sal){
+        //GENERAMOS: pimienta
+            $carac = str_split("ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz");
+            $carac_p = array_rand ($carac, 2);
+            $pimientaCHAR1 = $carac[$carac_p[0]];
+            $pimientaCHAR2 = $carac[$carac_p[1]];
+            $pimienta = $pimientaCHAR1.$pimientaCHAR2;
+        // Aqui hash solamente de contraseña
+            $contraHasheada = hash("SHA256", $contra);
+        //hash completo
+            $hash = $contraHasheada.$pimienta.$sal;
+        return $hash;
+    }
+    $contraRe="#gato123";
+    $sal = generarSal();
+    $hash = generarHash($contraRe, $sal);
+    echo $hash;
+    echo "<br>16b1176bd9f157a4ebc917e2362aae3fc07c703707731aededd8fbe5ceeabf51in648766690f8dc";
 ?>
 <!DOCTYPE html>
 <html>

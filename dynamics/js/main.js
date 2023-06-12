@@ -1,7 +1,7 @@
 //Se encarga de mostrar la contraseña en el registro (funciona)
 function mostrarContraRe() {
-    var contraRe = document.getElementById("contraRe");
-    var confirmarContraRe = document.getElementById("confirmarContraRe");
+    var contraRe = document.getElementById("contraRe").value;
+    var confirmarContraRe = document.getElementById("confirmarContraRe").value;
     if (contraRe.type === "password" || confirmarContraRe.type === "password") {
         contraRe.type = "text";
         confirmarContraRe.type = "text";
@@ -13,7 +13,7 @@ function mostrarContraRe() {
 
 //Se encarga de mostrar la contraseña en el inicio de sesión (funciona)
 function mostrarContraIn() {
-    var contraIn = document.getElementById("contraIn");
+    var contraIn = document.getElementById("contraIn").value;
     if (contraIn.type === "password") {
         contraIn.type = "text";
     } else {

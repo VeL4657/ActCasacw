@@ -40,13 +40,7 @@ $nombreUsuarioRe   = mysqli_real_escape_string($conexion, $nombreUsuarioRe);
 $contraRe          = mysqli_real_escape_string($conexion, $contraRe);
 $confirmarContraRe = mysqli_real_escape_string($conexion, $confirmarContraRe);
 
-//Guardar contraseña (sólo de prueba), reemplazar con HASH(funciona)
-if ($contraRe === $confirmarContraRe) {
-    $sql = "INSERT INTO Usuarios (Nombre, Usuario, Contra) VALUES ('$nombreRe', '$nombreUsuarioRe', '$contraRe')";
-    mysqli_query($conexion, $sql);
-}
 
-mysqli_close($conexion);
 
 /*
  * Hasheo contraseñas, tambien tienen que agregar la verificacion de hash en validarIn.php.
@@ -66,4 +60,6 @@ if ($contraRe === $confirmarContraRe) {
     $sql = "INSERT INTO Usuarios (Nombre, Usuario, ContraID) VALUES ('$nombreRe', '$nombreUsuarioRe', $contraId)";
     mysqli_query($conexion, $sql);
 }
+
+mysqli_close($conexion);
 

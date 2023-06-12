@@ -3,8 +3,10 @@
     const USER="root";
     const PASS="";
     const DB="baseCasas";
+
     const RUTA = "C:\xampp\mysql\bin\mysqldump.exe";
     const nRespaldo = "C:\xampp\htdocs\php\ActCasacw\docs\sql\BaseMACasas.sql";
+    
     function connect(){
         $conexion = mysqli_connect(HOST,USER,PASS,DB);
 
