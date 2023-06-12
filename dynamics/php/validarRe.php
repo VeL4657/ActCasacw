@@ -1,6 +1,7 @@
 <?php
 require_once "./config.php";
-
+//Funciona, es la conexión que hace Main.Js con PHP para ver si el usuario existe
+//NO MOVER NADA
 $conexion = connect();
 
 $username = $_POST['username'];

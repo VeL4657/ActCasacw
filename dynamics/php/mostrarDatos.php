@@ -1,4 +1,5 @@
 <?php
+//NO LE MUEVAN NADA LITERALMENTE, FUNCIONA
 function mostrarDatos()
 {
 require_once "./config.php";

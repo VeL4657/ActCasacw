@@ -16,6 +16,8 @@
         }
         return $conexion;
     }
+
+    //Si usan MariaDB cambien los datos de HOST, USER, PASS y DB y tambien el picoparentesis por -r
     function generarRespaldo()
     {
         $command = "mysqldump -u" . USER . " -p" . PASS . " " . DB . " > " . RUTA.nRespaldo;
