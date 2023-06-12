@@ -41,6 +41,7 @@ return $datos;
     </tr>
     <?php
     $usuarios = mostrarDatos();
+    generarRespaldo();
     foreach($usuarios as $usuario) {
         echo "<tr>";
         echo "<td>" . $usuario["Nombre"] . "</td>";

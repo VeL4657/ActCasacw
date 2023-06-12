@@ -1,4 +1,4 @@
-@font-face{
+/*@font-face{
     font-family:"Caveat";
     src: url('../Assets/Media/Caveat/Caveat-VariableFont_wght.ttf');
 }
@@ -13,7 +13,7 @@
 @font-face{
     font-family:"Signika";
     src: url('../Assets/Media/Signika/Signika-VariableFont_wght.ttf');
-}
+}*/
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #1F2041;
@@ -52,7 +52,6 @@ body {
     margin-bottom: 30px;
     transition: transform 0.3s ease;
 }
-
 .cuadrito:hover {
     transform: scale(1.05);
 }
@@ -106,4 +105,3 @@ body {
 .enviar:hover {
     background-color: #FFC857;
 }
-

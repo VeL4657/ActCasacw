@@ -1,10 +1,10 @@
 <?php
     const HOST="localhost";
-    const USER="danibutnotdani";
-    const PASS="danibutnotdani";
+    const USER="root";
+    const PASS="";
     const DB="baseCasas";
-    const RUTA = "../../docs/sql/";
-    const nRespaldo = "baseCasas.sql";
+    const RUTA = "C:\xampp\mysql\bin\mysqldump.exe";
+    const nRespaldo = "C:\xampp\htdocs\php\ActCasacw\docs\sql\BaseMACasas.sql";
     function connect(){
         $conexion = mysqli_connect(HOST,USER,PASS,DB);
 
@@ -20,7 +20,7 @@
     //Si usan MariaDB cambien los datos de HOST, USER, PASS y DB y tambien el picoparentesis por -r
     function generarRespaldo()
     {
-        $command = "mysqldump -u" . USER . " -p" . PASS . " " . DB . " > " . RUTA.nRespaldo;
+        $command = "C:\xampp\mysql\bin\mysqldump.exe -u" . USER . " -p" . PASS . " " . DB . " > " .nRespaldo;
 
         system($command, $output);
 
