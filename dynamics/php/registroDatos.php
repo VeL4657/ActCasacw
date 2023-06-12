@@ -2,6 +2,7 @@
 require_once "./config.php";
 $conexion = connect();
 
+//Funcion de sanitizar (funciona)
 function sanitas($data){
     $data = trim(stripslashes(htmlspecialchars($data)));
     return $data;
@@ -14,7 +15,7 @@ function generarSal(){
 function generarHash($contra, $sal){
     // Aqui hash
 }
-
+//Sanitización de datos(funciona)
 $nombreRe = isset($_POST["nombreRe"]) ? sanitas($_POST["nombreRe"]) : "";
 $nombreUsuarioRe = isset($_POST["nombreUsuarioRe"]) ? sanitas($_POST["nombreUsuarioRe"]) : "";
 $contraRe = isset($_POST["contraRe"]) ? trim(stripslashes($_POST["contraRe"])) : "";
@@ -27,6 +28,7 @@ $nombreUsuarioRe = mysqli_real_escape_string($conexion, $nombreUsuarioRe);
 $contraRe = mysqli_real_escape_string($conexion, $contraRe);
 $confirmarContraRe = mysqli_real_escape_string($conexion, $confirmarContraRe);
 
+//Guardar contraseña (sólo de prueba), reemplazar con HASH(funciona)
 if ($contraRe === $confirmarContraRe) {
     $sql = "INSERT INTO Usuarios (Nombre, Usuario, Contra) VALUES ('$nombreRe', '$nombreUsuarioRe', '$contraRe')";
     mysqli_query($conexion, $sql);
@@ -35,7 +37,9 @@ if ($contraRe === $confirmarContraRe) {
 mysqli_close($conexion);
 
 /*
- * Hasheo contraseñas
+ * Hasheo contraseñas, tambien tienen que agregar la verificacion de hash en validarIn.php.
+ * Este trozo de código guarda la contraseña correctamente en ContraPass y recupera su ID para guardarlo en Usuarios.
+ * (funciona)
  * if ($contraRe === $confirmarContraRe) {
     $sal = generarSal();
     $hash = generarHash($contraRe, $sal);

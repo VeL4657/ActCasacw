@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+//Dejar con require_once y no con include (prevencion de errores)(funciona)
 require_once "./config.php";
 
 $conexion = connect();
@@ -8,6 +9,7 @@ $conexion = connect();
 $username = $_POST['username'];
 $password = $_POST['password'];
 
+//Busca los datos (Verificar si funciona)
 $sql = "SELECT ContraHashh FROM Usuarios INNER JOIN ContraPass ON Usuarios.ContraID = ContraPass.ContraID WHERE Usuario = ?";
 $stmt = $conexion->prepare($sql);
 $stmt->bind_param('s', $username);
@@ -19,7 +21,7 @@ if ($result->num_rows > 0) {
     $storedPassword = $row['ContraHashh'];
 
     if ($password === $storedPassword) {
-        $_SESSION['username'] = $username; // Guarda el username en la sesión
+        $_SESSION['username'] = $username; // Guarda el username en la sesión y genera una sesión que usar en página principal
         echo '1';
     } else {
         echo '0';
@@ -31,7 +33,9 @@ if ($result->num_rows > 0) {
 mysqli_close($conexion);
 
 
-/*if ($result->num_rows > 0) {
+/*Para usar cuando configuren hash, antes no porque da error
+(funciona)
+ * if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $hashPassword = $row['ContraHashh'];
 

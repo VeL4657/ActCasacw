@@ -1,3 +1,4 @@
+//Se encarga de mostrar la contraseña en el registro (funciona)
 function mostrarContraRe() {
     var contraRe = document.getElementById("contraRe");
     var confirmarContraRe = document.getElementById("confirmarContraRe");
@@ -10,6 +11,7 @@ function mostrarContraRe() {
     }
 }
 
+//Se encarga de mostrar la contraseña en el inicio de sesión (funciona)
 function mostrarContraIn() {
     var contraIn = document.getElementById("contraIn");
     if (contraIn.type === "password") {
@@ -19,6 +21,7 @@ function mostrarContraIn() {
     }
 }
 
+//Determina si el user es válido (funciona)
 var isUsernameValid = true;
 
 async function usuarioE() {
@@ -49,6 +52,7 @@ async function usuarioE() {
     }
 }
 
+//Valida datos de registro (funciona)
 async function validarDatosRe(event) {
     event.preventDefault();
 
@@ -109,6 +113,7 @@ async function validarDatosRe(event) {
     }
 }
 
+//Valida datos de inicio de sesión (funciona)
 async function validarDatosIn(event) {
     event.preventDefault();
 
