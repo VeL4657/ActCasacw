@@ -1,7 +1,3 @@
-<?php
-    session_start();
-
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,21 +10,19 @@
 <body>
 <header id="barrat">Selecciona tu casa</header>
 <main>
-    <div class="btn" id="btnaj">
-        <a href="../dynamics/php/registroDatos.php">
+    <form action="../dynamics/php/obtaincasa.php" method="POST" target="_self">
+
+        <button type="submit" value="1" class="btn" name="btn">
             <img src="../Statics/Assets/Media/botonajsf.png" alt="btn">
-        </a>
-    </div>
-    <div class="btn" id="btnha">
-        <a href="../dynamics/php/registroDatos.php">
+        </button>
+        <button type="submit" value="2" class="btn" name="btn">
             <img src="../Statics/Assets/Media/btnhasf.png" alt="btnha">
-        </a>
-    </div>
-    <div class="btn" id="btnte">
-        <a href="../dynamics/php/registroDatos.php">
+        </button>
+        <button type="submit" value="3" class="btn" name="btn">
             <img src="../Statics/Assets/Media/botontepsf.png" alt="btnha">
-        </a>
-    </div>  
+        </button>
+    </form>
+
 </main>
 </body>
 </html>

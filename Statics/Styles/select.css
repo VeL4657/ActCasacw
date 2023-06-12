@@ -29,7 +29,9 @@ main {
 
 .btn {
     margin: 10px;
+    background-color: transparent;
     transition: transform 0.3s ease;
+    border: transparent;
 }
 
 .btn:hover {
