@@ -19,7 +19,7 @@ if ($result->num_rows > 0) {
     $storedPassword = $row['ContraHashh'];
 
     if ($password === $storedPassword) {
-        $_SESSION['username'] = $username; // Guarda el nombre de usuario en la sesión
+        $_SESSION['username'] = $username; // Guarda el username en la sesión
         echo '1';
     } else {
         echo '0';

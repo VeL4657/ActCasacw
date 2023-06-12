@@ -28,6 +28,15 @@ $contraRe = mysqli_real_escape_string($conexion, $contraRe);
 $confirmarContraRe = mysqli_real_escape_string($conexion, $confirmarContraRe);
 
 if ($contraRe === $confirmarContraRe) {
+    $sql = "INSERT INTO Usuarios (Nombre, Usuario, Contra) VALUES ('$nombreRe', '$nombreUsuarioRe', '$contraRe')";
+    mysqli_query($conexion, $sql);
+}
+
+mysqli_close($conexion);
+
+/*
+ * Hasheo contraseñas
+ * if ($contraRe === $confirmarContraRe) {
     $sal = generarSal();
     $hash = generarHash($contraRe, $sal);
 
@@ -39,6 +48,4 @@ if ($contraRe === $confirmarContraRe) {
     $sql = "INSERT INTO Usuarios (Nombre, Usuario, ContraID) VALUES ('$nombreRe', '$nombreUsuarioRe', $contraId)";
     mysqli_query($conexion, $sql);
 }
-mysqli_close($conexion);
-
-
+ */
